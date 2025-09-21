@@ -1,5 +1,5 @@
 import { AntDesign } from "@expo/vector-icons";
-import { router } from "expo-router";
+import { Link, router } from "expo-router";
 import { useState } from "react";
 import {
   Pressable,
@@ -56,7 +56,9 @@ export default function CreateScreen() {
           style={{ padding: 10 }}
         >
           {/* COMMUNITY SELECTOR */}
-          <View
+          <Link
+            href={"GroupSelector"}
+            asChild
             style={{
               flexDirection: "row",
               backgroundColor: "#EDEDED",
@@ -67,20 +69,22 @@ export default function CreateScreen() {
               marginVertical: 10,
             }}
           >
-            <Text
-              style={{
-                backgroundColor: "black",
-                color: "white",
-                paddingVertical: 1,
-                paddingHorizontal: 5,
-                fontWeight: "bold",
-                borderRadius: 10,
-              }}
-            >
-              r/
-            </Text>
-            <Text style={{ fontWeight: "600" }}>Select a community</Text>
-          </View>
+            <Pressable>
+              <Text
+                style={{
+                  backgroundColor: "black",
+                  color: "white",
+                  paddingVertical: 1,
+                  paddingHorizontal: 5,
+                  fontWeight: "bold",
+                  borderRadius: 10,
+                }}
+              >
+                r/
+              </Text>
+              <Text style={{ fontWeight: "600" }}>Select a community</Text>
+            </Pressable>
+          </Link>
 
           {/* INPUTS */}
           <TextInput
