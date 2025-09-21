@@ -5,18 +5,16 @@ import { useAuth } from "@clerk/clerk-expo";
 export default function TabLayout() {
   const { signOut } = useAuth();
   return (
-    <Tabs
+   <Tabs
       screenOptions={{
-        tabBarActiveTintColor: "black",
-        headerRight: () => (
+        tabBarActiveTintColor: 'black',
+        headerRight: () =>
           <Feather
             name="log-out"
             size={22}
             color="black"
-            style={{ paddingRight: 10 }}
-            onPress={() => signOut()}
+            style={{ paddingRight: 10 }} onPress={() => signOut()}
           />
-        ),
       }}
     >
       <Tabs.Screen
